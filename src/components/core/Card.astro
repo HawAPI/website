@@ -1,0 +1,105 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+  name: string;
+  icon: string;
+  iconSize?: string;
+  version: string;
+  description: string;
+  doc: string;
+  git: string;
+  isOfficial: boolean;
+}
+
+const {
+  name,
+  description,
+  icon,
+  iconSize = '20px',
+  version,
+  doc,
+  git,
+  isOfficial,
+} = Astro.props as Props;
+---
+
+<div class="card">
+  <span class="card-icons">
+    <Icon name={icon} height={iconSize} width={iconSize} class="icon-style" />
+    {
+      (
+        <Icon
+          name={isOfficial ? 'ic:sharp-verified-user' : 'mdi:account-group'}
+          height={iconSize}
+          width={iconSize}
+          class="icon-style"
+        />
+      )
+    }
+  </span>
+  <h3 class="card-title">{name}</h3>
+  <p class="card-desc">{description}</p>
+  <span class="card-footer">
+    <span>
+      <p>{version}</p>
+    </span>
+    <span class="card-footer-links">
+      <a href={doc} target="_blank">
+        <Icon name="mdi:file-document-outline" height="24px" width="24px" />
+      </a>
+      |
+      <a href={git} target="_blank">
+        <Icon name="mdi:github" height="24px" width="24px" />
+      </a>
+    </span>
+  </span>
+</div>
+
+<style>
+  .card {
+    height: 12rem;
+    width: 14rem;
+    border: 1px solid red;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline-color: rgb(100, 2, 2);
+  }
+
+  .card-title,
+  .card-desc {
+    padding-top: 5px;
+  }
+
+  .card-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .card-footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .icon-style {
+    padding: 10px 0;
+    color: white;
+  }
+</style>

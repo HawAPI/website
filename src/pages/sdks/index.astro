@@ -1,13 +1,83 @@
 ---
 import BackgroundEffect from '@components/core/BackgroundEffect.astro';
+import Card from '@components/core/Card.astro';
 import Layout from '@components/layouts/Layout.astro';
+import { Icon } from 'astro-icon';
+import json from '../../../public/data/sdks.json';
 ---
 
 <Layout title="SDK's">
   <main>
     <BackgroundEffect />
     <h1 class="sw-effect-title">SDK's</h1>
+
+    <span class="sdks-sub-title">
+      A Software Development Kit (SDK) is a quick and easy way to get started
+      with the <a href="/">HawAPI</a>. Just download the library for the
+      language you are working with.
+    </span>
+
+    <div class="cards">
+      {
+        json.map((data) => (
+          <Card
+            name={data.name}
+            description={data.description}
+            icon={data.icon}
+            version={data.version}
+            doc={data.doc}
+            git={data.git}
+            isOfficial={data.official}
+          />
+        ))
+      }
+    </div>
+
+    <span class="sdks-footer">
+      <span class="sdks-footer-item">
+        <Icon
+          name="ic:sharp-verified-user"
+          height="20px"
+          width="20px"
+          class="icon-style"
+        />
+        Official
+      </span>
+      <span class="sdks-footer-item">
+        <Icon
+          name="mdi:account-group"
+          height="20px"
+          width="20px"
+          class="icon-style"
+        />
+        Community
+      </span>
+    </span>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .cards {
+    height: 50%;
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .sdks-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .sdks-footer-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+</style>
