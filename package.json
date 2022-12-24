@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "astro-dev": "astro dev",
-    "astr-build": "astro build",
+    "astro-build": "astro build",
     "astro-preview": "astro preview",
     "astro": "astro",
     "retype-dev": "cd docs/ && retype watch",
     "retype-build": "cd docs/ && retype build --output ../build/docs",
-    "build": "node scripts/build.js"
+    "clean": "rm -rf ./build",
+    "build": "yarn clean && yarn astro-build && yarn retype-build && node scripts/change-colors.mjs"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
