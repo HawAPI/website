@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "astro-dev": "astro dev",
+    "astr-build": "astro build",
+    "astro-preview": "astro preview",
+    "astro": "astro",
+    "retype-dev": "cd docs/ && retype watch",
+    "retype-build": "cd docs/ && retype build --output ../build/docs",
+    "build": "node scripts/build.js"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
