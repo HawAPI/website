@@ -9,11 +9,13 @@ export default defineConfig({
   //
   // Astro uses this full URL to generate your sitemap
   // and canonical URLs in your final build.
-  site: 'https://hawapi.theprject.id',
+  site: 'https://hawapi.theproject.id',
   // Specifies the output target for builds.s
   //
   // ‘static’ - Building a static site to be deploy to any static host.
   output: 'static',
+  // Set the directory that astro build writes your final build to.
+  outDir: './build',
   // Astro sitemap.
   //
   // Ref: https://docs.astro.build/en/guides/integrations-guide/sitemap/
