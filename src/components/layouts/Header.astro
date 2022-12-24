@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 ---
 
 <header>
@@ -8,8 +9,8 @@
   <nav>
     <ul>
       <li class="nav-item"><a href="/sdks/">SDK's</a></li>
-      <li class="nav-item"><a href="http://localhost:5501/">FAQ</a></li>
-      <li class="nav-item"><a href="http://localhost:5501/about/">About</a></li>
+      <li class="nav-item"><a href="/docs/faq/">FAQ</a></li>
+      <li class="nav-item"><a href="/docs/about/">About</a></li>
     </ul>
   </nav>
   <a
@@ -17,10 +18,7 @@
     target="_blank"
     class="header-item-box header-item-box-right"
   >
-    <p>Hello</p>
-    <!-- <iconify-icon 
-        inline icon="mdi:github" width="30" height="30"
-    ></iconify-icon> -->
+    <Icon pack="mdi" name="github" height="30px" width="30px" />
   </a>
 </header>
 
@@ -33,7 +31,7 @@
     align-items: center;
     gap: 2rem;
     z-index: 2;
-    border-bottom: 1px solid rgb(60, 0, 0);
+    border-bottom: 1px solid var(--primary-border-color);
   }
 
   .header-item-box {
@@ -45,7 +43,7 @@
   }
 
   .header-item-box-left {
-    font: 1.5rem;
+    font-size: 1.5rem;
     margin-left: 5rem;
     color: rgba(0, 0, 0, 0.8);
     text-shadow: var(--sw-primary-text-effect);
@@ -56,8 +54,7 @@
   }
 
   .header-item-box-right {
-    margin-right: 5rem;
-    font-size: 1rem;
+    margin-right: 6rem;
   }
 
   nav {

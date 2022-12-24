@@ -3,10 +3,15 @@ import BackgroundEffect from '@components/core/BackgroundEffect.astro';
 import Layout from '@components/layouts/Layout.astro';
 ---
 
+<script
+  is:inline
+  src="https://cdn.statically.io/libs/typed.js/2.0.11/typed.min.js"
+></script>
+
 <Layout title="Home">
   <main>
     <BackgroundEffect />
-    <h1 class="sw-effect-title">HawAPI</h1>
+    <h1 class="sw-effect-title">Haw<span id="typ-title"></span></h1>
 
     <p class="home-sub-title">
       A Free and <a href="https://github.com/HawAPI" target="_blank" class="oc"
@@ -27,6 +32,7 @@ import Layout from '@components/layouts/Layout.astro';
   }
 
   .home-btns {
+    margin-top: 0.8rem;
     display: flex;
     gap: 2.5rem;
   }
@@ -59,3 +65,17 @@ import Layout from '@components/layouts/Layout.astro';
     color: white;
   }
 </style>
+
+<script is:inline>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  var typed = new Typed('#typ-title', {
+    strings: ['API', 'kins'],
+    typeSpeed: 150,
+    backSpeed: 100,
+    startDelay: 600,
+    backDelay: 1500,
+    stringsElement: null,
+    showCursor: false,
+    loop: true,
+  });
+</script>
