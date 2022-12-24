@@ -1,41 +1,41 @@
 [
   {
     "name": "dart-sdk",
-    "description": "Dart SDK for HawAPI",
+    "description": "HawAPI SDK for Dart",
     "language": "Dart",
     "icon": "simple-icons:dart",
     "git": "https://github.com/HawAPI/dart-sdk",
-    "doc": "/docs/api/dart-sdk",
+    "doc": "/docs/sdks/dart",
     "version": "v1",
     "official": true
   },
   {
     "name": "go-sdk",
-    "description": "Golang SDK for HawAPI",
+    "description": "HawAPI SDK for Golang",
     "language": "Golang",
-    "icon": "simple-icons:dart",
+    "icon": "vscode-icons:file-type-go-white",
     "git": "https://github.com/HawAPI/go-sdk",
-    "doc": "/docs/api/go-sdk",
+    "doc": "/docs/sdks/go",
     "version": "v1",
     "official": true
   },
   {
     "name": "kotlin-sdk",
-    "description": "Kotlin SDK for HawAPI",
+    "description": "HawAPI SDK for Kotlin",
     "language": "Kotlin",
     "icon": "simple-icons:kotlin",
     "git": "https://github.com/HawAPI/kotlin-sdk",
-    "doc": "/docs/api/kotlin-sdk",
+    "doc": "/docs/sdks/kotlin",
     "version": "v1",
     "official": true
   },
   {
     "name": "js-sdk",
-    "description": "JavaScript SDK for HawAPI",
+    "description": "HawAPI SDK for JavaScript",
     "language": "JavaScript",
     "icon": "simple-icons:javascript",
     "git": "https://github.com/HawAPI/js-sdk",
-    "doc": "/docs/api/js-sdk",
+    "doc": "/docs/sdks/javascript",
     "version": "v1",
     "official": true
   }
