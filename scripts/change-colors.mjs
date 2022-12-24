@@ -13,12 +13,13 @@ function main() {
     result = result.replaceAll('34 34 34', '15 15 15');
     result = result.replaceAll('95 160 255', '179 0 0');
     result = result.replaceAll('66 132 251', '179 0 0');
-    result = result.replaceAll('44 44 44', '40 0 0');
-    result = result.replaceAll('50 50 50', '40 0 0');
+    result = result.replaceAll('44 44 44', '70 0 0');
+    result = result.replaceAll('50 50 50', '70 0 0');
     result = result.replaceAll('97 97 97', '255 255 255');
     result = result.replaceAll('39 39 39', '25 25 25');
     result = result.replaceAll('179 210 255', '255 255 255');
     result = result.replaceAll('189 189 189', '255 255 255');
+    result = result.replaceAll('66 66 66', '70 0 0');
 
     fs.writeFile(
       './build/docs/resources/css/retype.css',
