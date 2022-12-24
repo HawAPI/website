@@ -45,11 +45,11 @@ const {
       <p>{version}</p>
     </span>
     <span class="card-footer-links">
-      <a href={doc} target="_blank">
+      <a href={doc} target="_blank" class="card-footer-link">
         <Icon name="mdi:file-document-outline" height="24px" width="24px" />
       </a>
       |
-      <a href={git} target="_blank">
+      <a href={git} target="_blank" class="card-footer-link">
         <Icon name="mdi:github" height="24px" width="24px" />
       </a>
     </span>
@@ -58,7 +58,7 @@ const {
 
 <style>
   .card {
-    height: 12rem;
+    height: 13rem;
     width: 14rem;
     border: 1px solid red;
     border-radius: 10px;
@@ -75,6 +75,10 @@ const {
   .card-title,
   .card-desc {
     padding-top: 5px;
+  }
+
+  .card-desc {
+    font-size: 0.9em;
   }
 
   .card-icons {
@@ -96,6 +100,12 @@ const {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+  }
+
+  .card-footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .icon-style {
