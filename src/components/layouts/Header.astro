@@ -1,0 +1,77 @@
+---
+---
+
+<header>
+  <a href="/" class="header-item-box header-item-box-left">
+    <p class="title">HawAPI</p>
+  </a>
+  <nav>
+    <ul>
+      <li class="nav-item"><a href="/sdks/">SDK's</a></li>
+      <li class="nav-item"><a href="http://localhost:5501/">FAQ</a></li>
+      <li class="nav-item"><a href="http://localhost:5501/about/">About</a></li>
+    </ul>
+  </nav>
+  <a
+    href="https://github.com/HawAPI"
+    target="_blank"
+    class="header-item-box header-item-box-right"
+  >
+    <p>Hello</p>
+    <!-- <iconify-icon 
+        inline icon="mdi:github" width="30" height="30"
+    ></iconify-icon> -->
+  </a>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 2;
+    border-bottom: 1px solid rgb(60, 0, 0);
+  }
+
+  .header-item-box {
+    height: 30px;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-item-box-left {
+    font: 1.5rem;
+    margin-left: 5rem;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: var(--sw-primary-text-effect);
+  }
+
+  .header-item-box-left:hover {
+    color: rgb(100, 2, 2);
+  }
+
+  .header-item-box-right {
+    margin-right: 5rem;
+    font-size: 1rem;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    display: inline;
+    margin-right: 1.5rem;
+    font-size: 0.875rem;
+  }
+</style>
