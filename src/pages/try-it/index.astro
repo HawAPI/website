@@ -1,13 +1,82 @@
 ---
 import BackgroundEffect from '@components/core/BackgroundEffect.astro';
+import Button from '@components/core/Button.astro';
 import Layout from '@components/layouts/Layout.astro';
 ---
 
 <Layout title="Try it">
   <main>
     <BackgroundEffect />
-    <h1 class="sw-effect-title">Try it now!</h1>
+    <h1 class="sw-effect-title try-h1">Try it now!</h1>
+
+    <div class="input-box">
+      <div class="input-url">https://hawapi.theproject.id/api/v1/</div>
+      <input type="text" id="input" />
+    </div>
+
+    <p class="try-sub">Lost? See the <a href="/docs/">Documentation</a></p>
+
+    <div class="options">
+      <Button name="Search" class="try-btn try-btn-1" id="search" />
+      <Button name="Copy" class="try-btn try-btn-2" id="copy" />
+      <Button name="Clear" class="try-btn try-btn-3" id="clear" />
+    </div>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .try-h1 {
+    margin: 1.5rem 0;
+  }
+
+  .options {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .input-box {
+    display: flex;
+    transition: all 0.3s;
+  }
+
+  .try-sub {
+    margin-top: 1.5rem;
+  }
+
+  .input-box:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline-color: rgb(100, 2, 2);
+  }
+
+  .input-url,
+  input {
+    color: white;
+    border: none;
+    height: 2rem;
+    border-radius: 5px;
+    outline: none;
+    outline-color: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--secondary-color);
+  }
+
+  .input-url {
+    width: max-content;
+    padding: 0 0 0 10px;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    padding: 0;
+    width: 20rem;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 1em;
+  }
+</style>
