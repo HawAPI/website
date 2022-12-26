@@ -190,6 +190,19 @@ const { title } = Astro.props as Props;
         margin: 0;
         padding: 0;
       }
+
+      /* Scroll Bar */
+      :global(::-webkit-scrollbar) {
+        width: 6px;
+      }
+
+      :global(::-webkit-scrollbar-track) {
+        background: var(--primary-border-color);
+      }
+
+      :global(::-webkit-scrollbar-thumb) {
+        background-color: #fff;
+      }
     </style>
   </body>
 </html>
