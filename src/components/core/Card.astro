@@ -1,81 +1,115 @@
 ---
-export interface Props {
-  title: string;
-  body: string;
-  href: string;
+import { Icon } from 'astro-icon';
+
+interface Props {
+  name: string;
+  icon: string;
+  iconSize?: string;
+  version: string;
+  description: string;
+  doc: string;
+  git: string;
+  isOfficial: boolean;
 }
 
-const { href, title, body } = Astro.props as Props;
+const {
+  name,
+  description,
+  icon,
+  iconSize = '20px',
+  version,
+  doc,
+  git,
+  isOfficial,
+} = Astro.props as Props;
 ---
 
-<li class="link-card">
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
-</li>
+<div class="card">
+  <span class="card-icons">
+    <Icon name={icon} height={iconSize} width={iconSize} class="icon-style" />
+    {
+      (
+        <Icon
+          name={isOfficial ? 'ic:sharp-verified-user' : 'mdi:account-group'}
+          height={iconSize}
+          width={iconSize}
+          class="icon-style"
+        />
+      )
+    }
+  </span>
+  <h3 class="card-title">{name}</h3>
+  <p class="card-desc">{description}</p>
+  <span class="card-footer">
+    <span>
+      <p>{version}</p>
+    </span>
+    <span class="card-footer-links">
+      <a href={doc} target="_blank" class="card-footer-link">
+        <Icon name="mdi:file-document-outline" height="24px" width="24px" />
+      </a>
+      |
+      <a href={git} target="_blank" class="card-footer-link">
+        <Icon name="mdi:github" height="24px" width="24px" />
+      </a>
+    </span>
+  </span>
+</div>
+
 <style>
-  :root {
-    --link-gradient: linear-gradient(
-      45deg,
-      #4f39fa,
-      #da62c4 30%,
-      var(--color-border) 60%
-    );
+  .card {
+    height: 13rem;
+    width: 14rem;
+    border: 1px solid red;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: all 0.3s;
   }
 
-  .link-card {
-    list-style: none;
+  .card:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline-color: rgb(100, 2, 2);
+  }
+
+  .card-title,
+  .card-desc {
+    padding-top: 5px;
+  }
+
+  .card-desc {
+    font-size: 0.9em;
+  }
+
+  .card-icons {
     display: flex;
-    padding: 0.15rem;
-    background-image: var(--link-gradient);
-    background-size: 400%;
-    border-radius: 0.5rem;
-    background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .link-card > a {
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    text-decoration: none;
-    line-height: 1.4;
-    padding: 1em 1.3em;
-    border-radius: 0.35rem;
-    color: var(--text-color);
-    background-color: white;
-    opacity: 0.8;
+    gap: 0.5rem;
   }
 
-  h2 {
-    margin: 0;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  .card-footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  p {
-    margin-top: 0.75rem;
-    margin-bottom: 0;
+  .card-footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  h2 span {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
-  }
-
-  .link-card:is(:hover, :focus-within) h2 {
-    color: #4f39fa;
-  }
-
-  .link-card:is(:hover, :focus-within) h2 span {
-    will-change: transform;
-    transform: translateX(2px);
+  .icon-style {
+    padding: 10px 0;
+    color: white;
   }
 </style>
