@@ -2,13 +2,13 @@
 interface Props {
   name: string;
   id?: string;
-  class?: string;
+  classes?: Array<string>;
 }
 
-const { name } = Astro.props as Props;
+const { name, id, classes } = Astro.props as Props;
 ---
 
-<button class="button">
+<button class:list={['button', classes]} id={id} value="cancel">
   {name}
 </button>
 
