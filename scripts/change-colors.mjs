@@ -4,14 +4,12 @@ import * as fs from 'fs';
 
 main();
 
-function main() {
-  let colors;
-
-  fs.readFile('./build/data/colors.json', 'utf-8', (err, json) => {
-    if (err) return console.log(err);
-
-    colors = new Map(Object.entries(JSON.parse(json)));
+async function main() {
+  const json = fs.readFileSync('./build/data/colors.json', {
+    encoding: 'utf8',
+    flag: 'r',
   });
+  const colors = new Map(Object.entries(JSON.parse(json)));
 
   fs.readFile('./build/docs/resources/css/retype.css', 'utf-8', (err, data) => {
     if (err) return console.log(err);

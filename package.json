@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "docs-dev": "cd docs/ && retype watch",
-    "docs-build": "cd docs/ && retype build --output ../build/docs",
+    "docs-build": "cd docs/ && ./scripts/get-sdks.sh --clean-downloads && retype build --output ../build/docs",
     "build-all": "yarn clean && yarn build && yarn docs-build && node scripts/change-colors.mjs",
     "clean": "rm -rf ./build"
   },
