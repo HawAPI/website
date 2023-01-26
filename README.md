@@ -104,7 +104,7 @@ You could help continuing its development by:
 
 ## Contact
 
-For any questions about the project: [Code of conduct](https://github.com/HawAPI/HawAPI#contact).
+For any questions about the project: [Contact](https://github.com/HawAPI/HawAPI#contact).
 
 ## Code of conduct
 
