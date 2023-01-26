@@ -116,7 +116,3 @@ We will behave ourselves if you behave yourselves. For more details see our
 HawAPI is licensed under the [MIT License](LICENSE).
 
 > Check out all [licenses/dependencies](https://hawapi.theproject.id/docs/about/#licenses)
-
-```
-
-```

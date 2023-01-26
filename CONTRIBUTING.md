@@ -57,7 +57,7 @@ When you're finished with the changes, create a pull request, also known as a PR
 
 Once your PR is merged, your contributions will be publicly visible on the [HawAPI](https://hawapi.theproject.id/).
 
-Now that you are part of the **HawAPI Community**.
+Now you are part of the **HawAPI Community**.
 
 ## Attribution
 
