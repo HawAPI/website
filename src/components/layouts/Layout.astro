@@ -4,9 +4,21 @@ import Footer from './Footer.astro';
 
 export interface Props {
   title: string;
+  description?: string;
+  tags?: string;
+  author?: string;
+  banner?: string;
+  icon?: string;
 }
 
-const { title } = Astro.props as Props;
+const {
+  title,
+  description = 'A Free and Open Source API for Stranger Things.',
+  tags = 'stranger-strings, api, sw, s-things, hawapi, haw-api, theproject.id, hawapi.theproject.id, netflix, st1, watch, rest, free, open source',
+  author = 'LucJosin',
+  banner = './images/banner.png',
+  icon = './favicon.ico',
+} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -19,47 +31,46 @@ const { title } = Astro.props as Props;
     <meta http-equiv="content-type" content="text/html" />
 
     <!-- Default  -->
-    <meta name="copyright" content="TODO" />
-    <meta name="description" content="TODO" />
-    <meta name="author" content="TODO" />
-    <meta name="tags" content="TODO" />
-    <meta name="keywords" content="TODO" />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="tags" content={tags} />
+    <meta name="keywords" content={tags} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="TODO" />
+    <meta name="robots" content="robots.txt" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="TODO" />
-    <meta name="twitter:site" content="TODO" />
+    <meta name="twitter:creator" content={author} />
+    <meta name="twitter:site" content={Astro.url} />
     <meta name="twitter:domain" content={Astro.url} />
-    <meta name="twitter:title" content="TODO" />
+    <meta name="twitter:title" content={title + ' | HawAPI'} />
     <meta
       name="twitter:description"
       property="og:description"
       itemprop="description"
-      content="TODO"
+      content={description}
     />
     <meta
       property="twitter:image"
       itemprop="image primaryImageOfPage"
-      content="TODO"
+      content={banner}
     />
 
     <!-- Open Graph -->
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content="TODO" />
-    <meta property="og:site_name" content="TODO" />
-    <meta property="og:description" content="TODO" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="HawAPI" />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="TODO" />
+    <meta property="og:image" content={banner} />
 
     <!-- Links -->
     <link rel="canonical" href={Astro.url} />
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" href="TODO" type="image/png" />
-    <link rel="shortcut icon" type="image/png" href="TODO" />
-    <link rel="icon" type="image/png" href="TODO" />
+    <link rel="apple-touch-icon" href={icon} type="image/ico" />
+    <link rel="shortcut icon" type="image/ico" href={icon} />
+    <link rel="icon" type="image/ico" href={icon} />
 
     <!-- Astro -->
     <meta name="generator" content={Astro.generator} />
