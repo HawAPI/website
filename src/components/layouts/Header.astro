@@ -1,18 +1,23 @@
 ---
+import Nav from '@components/core/Nav.astro';
 import { Icon } from 'astro-icon';
 ---
 
 <header>
   <a href="/" class="header-item-box header-item-box-left">
-    <p class="title">HawAPI</p>
+    <p class="title">Haw<br />API</p>
   </a>
-  <nav>
-    <ul>
-      <li class="nav-item"><a href="/docs/sdks/">SDK's</a></li>
-      <li class="nav-item"><a href="/docs/faq/">FAQ</a></li>
-      <li class="nav-item"><a href="/docs/about/">About</a></li>
-    </ul>
-  </nav>
+  <div class="menu">
+    <div class="n-menu">
+      <Nav />
+    </div>
+    <div class="m-menu">
+      <Icon name="ic:round-menu" class="m-menu-icon" />
+      <div class="m-menu-body">
+        <Nav />
+      </div>
+    </div>
+  </div>
   <a
     href="https://github.com/HawAPI"
     target="_blank"
@@ -32,6 +37,12 @@ import { Icon } from 'astro-icon';
     gap: 2rem;
     z-index: 2;
     border-bottom: 1px solid var(--primary-border-color);
+  }
+
+  .title {
+    text-align: center;
+    font-size: 0.8em;
+    font-family: Benguiat;
   }
 
   .header-item-box {
@@ -57,7 +68,7 @@ import { Icon } from 'astro-icon';
     margin-right: 6rem;
   }
 
-  nav {
+  .menu {
     width: 100%;
     display: flex;
     align-self: center;
@@ -66,9 +77,61 @@ import { Icon } from 'astro-icon';
     justify-content: center;
   }
 
-  .nav-item {
-    display: inline;
-    margin-right: 1.5rem;
-    font-size: 0.875rem;
+  .m-menu > * {
+    display: none;
+    pointer-events: none;
+  }
+
+  .m-menu {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .m-menu-icon {
+    z-index: 99;
+    height: 40px;
+    width: 40px;
+    color: var(--secondary-text-color);
+  }
+
+  .m-menu-body {
+    position: absolute;
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    .n-menu {
+      display: none;
+      pointer-events: none;
+    }
+
+    .m-menu > .m-menu-icon {
+      display: initial;
+      pointer-events: all;
+    }
   }
 </style>
+
+<script>
+  let isOpen = false;
+  const mMenu = document.querySelector<HTMLElement>('.m-menu');
+  const mMenuBody = document.querySelector<HTMLElement>('.m-menu-body');
+  const main = document.querySelector<HTMLElement>('main');
+
+  mMenu?.addEventListener('click', () => {
+    if (mMenuBody == null || main == null) return;
+
+    if (isOpen) {
+      main.style.filter = 'none';
+      mMenuBody.style.display = 'none';
+      mMenuBody.style.pointerEvents = 'none';
+    } else {
+      main.style.filter = 'blur(1rem)';
+      mMenuBody.style.display = 'initial';
+      mMenuBody.style.pointerEvents = 'all';
+    }
+
+    isOpen = !isOpen;
+  });
+</script>

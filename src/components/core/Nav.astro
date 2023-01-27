@@ -1,0 +1,46 @@
+---
+---
+
+<nav class="m-menu-nav">
+  <ul class="m-menu-ul">
+    <li class="nav-item"><a href="/docs/sdks/">SDK's</a></li>
+    <li class="nav-item"><a href="/docs/faq/">FAQ</a></li>
+    <li class="nav-item"><a href="/docs/about/">About</a></li>
+  </ul>
+</nav>
+
+<style>
+  .m-menu-nav {
+    height: 100%;
+    width: 100%;
+  }
+
+  .nav-item {
+    display: inline;
+    margin-right: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 992px) {
+    .m-menu-nav {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      margin-top: 2rem;
+    }
+
+    .m-menu-ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-item {
+      margin-right: 0;
+      margin-top: 1.5rem;
+    }
+  }
+</style>
