@@ -2,11 +2,11 @@
 ---
 
 <footer>
-  <a href="/docs/about/#maintainers">Maintainers</a>
-  <a href="/docs/about/#tech-stack">Tech Stack</a>
-  <a href="/docs/about/#fair-use-policy">Fair Use Policy</a>
-  <a href="/docs/about/#copyright">Copyright</a>
-  <a href="/docs/about/#licenses">Licenses</a>
+  <a href="/docs/about/#maintainers" class="fr-item">Maintainers</a>
+  <a href="/docs/about/#tech-stack" class="fr-item">Tech Stack</a>
+  <a href="/docs/about/#fair-use-policy" class="fr-item">Fair Use Policy</a>
+  <a href="/docs/about/#copyright" class="fr-item">Copyright</a>
+  <a href="/docs/about/#licenses" class="fr-item">Licenses</a>
 </footer>
 
 <style>
@@ -20,5 +20,24 @@
     align-items: flex-start;
     justify-content: center;
     gap: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    footer {
+      height: max-content;
+      margin-top: -3.2rem;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(3, 8rem);
+      grid-template-rows: repeat(2, 0.5rem);
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    footer {
+      grid-template-columns: repeat(3, 5rem);
+      grid-template-rows: repeat(2, 0.5rem);
+    }
   }
 </style>
