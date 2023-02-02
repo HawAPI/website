@@ -11,22 +11,23 @@
 
 <style>
   footer {
-    position: fixed;
-    height: 2rem;
+    position: sticky;
+    min-height: 3.5rem;
     width: 100%;
-    margin-top: -2rem;
     font-size: 0.875rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    bottom: 0;
     gap: 1.5rem;
   }
 
   @media (max-width: 576px) {
     footer {
       height: max-content;
-      margin-top: -3.2rem;
       display: grid;
+      align-items: initial;
       justify-items: center;
       grid-template-columns: repeat(3, 8rem);
       grid-template-rows: repeat(2, 0.5rem);
