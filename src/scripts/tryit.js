@@ -1,6 +1,12 @@
 const API_URL = 'https://hawapi.theproject.id/api/v1/';
 
 window.onload = () => {
+  // Check if uri has 'search' param.
+  if (window.location.search !== '') {
+    const inputSearch = document.querySelector('#input');
+    inputSearch.value = window.location.search.replace('?search=', '');
+  }
+
   // Dialog
   handleSearchButtonEvent();
 
@@ -16,6 +22,7 @@ window.onload = () => {
  */
 function handleSearchButtonEvent() {
   // Dialog
+  const main = document.querySelector('main');
   const dialog = document.getElementById('result-dialog');
   const dialogCloseBtn = document.querySelector('.dg-btn-close');
   const searchButton = document.querySelector('#search');
@@ -33,10 +40,12 @@ function handleSearchButtonEvent() {
     viewer.data = await fetchData(input.value);
     viewer.expand('*');
 
+    main.style.filter = 'blur(1rem)';
     dialog.showModal();
   });
 
   dialogCloseBtn.addEventListener('click', () => {
+    main.style.filter = 'none';
     dialog.close();
   });
 }
