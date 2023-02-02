@@ -36,12 +36,19 @@ import { Icon } from 'astro-icon';
         <span class="m-input-url">hawapi[...]/api/v1/</span>
       </div>
       <input type="text" id="input" />
+      <button class="input-search" id="search"
+        ><Icon
+          name="mdi:search"
+          height="30px"
+          width="30px"
+          class="input-icon-search"
+        />
+      </button>
     </div>
 
     <p class="try-sub">Lost? See the <a href="/docs/">Documentation</a></p>
 
     <div class="options">
-      <Button name="Search" classes={['try-btn', 'try-btn-1']} id="search" />
       <Button name="Copy" classes={['try-btn', 'try-btn-2']} id="copy" />
       <Button name="Clear" classes={['try-btn', 'try-btn-3']} id="clear" />
     </div>
@@ -140,7 +147,8 @@ import { Icon } from 'astro-icon';
   }
 
   .input-url,
-  input {
+  input,
+  .input-icon-search {
     color: white;
     border: none;
     height: 2rem;
@@ -171,7 +179,31 @@ import { Icon } from 'astro-icon';
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     font-size: 1em;
+  }
+
+  .input-search {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .input-search:hover {
+    cursor: pointer;
+  }
+
+  .input-icon-search {
+    padding: 1px 5px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   @media (max-width: 1200px) {
