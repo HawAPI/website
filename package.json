@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "dev-docs": "cd docs/ && retype watch",
+    "dev:docs": "cd docs/ && retype watch",
     "build": "astro build",
-    "build-docs": "cd docs/ && yarn build",
-    "build-all": "yarn clean && yarn build && yarn build-docs && ./scripts/setup-docs.sh",
+    "build:docs": "cd docs/ && yarn build",
+    "build:all": "yarn clean && yarn build && yarn build-docs && ./scripts/setup-docs.sh",
     "clean": "rm -rf ./build"
   },
   "devDependencies": {
