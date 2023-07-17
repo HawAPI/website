@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "dev:docs": "cd docs/ && retype watch",
-    "build": "astro build",
+    "build": "yarn clean && astro build",
+    "build:adapt": "./scripts/adapt-website",
     "build:docs": "cd docs/ && yarn build",
-    "build:all": "yarn clean && yarn build && yarn build-docs && ./scripts/setup-docs.sh",
+    "build:all": "yarn build && yarn build-docs && ./scripts/setup-docs.sh && yarn build:adapt",
     "clean": "rm -rf ./build"
   },
   "devDependencies": {
