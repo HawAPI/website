@@ -8,7 +8,7 @@
     "build": "yarn clean && astro build",
     "build:adapt": "./scripts/adapt-website",
     "build:docs": "cd docs/ && yarn build",
-    "build:all": "yarn build && yarn build-docs && ./scripts/setup-docs.sh && yarn build:adapt",
+    "build:all": "yarn build && yarn build:docs && ./scripts/setup-docs.sh && yarn build:adapt",
     "clean": "rm -rf ./build"
   },
   "devDependencies": {
