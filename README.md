@@ -75,9 +75,6 @@ All scripts are run from the root of the project, from a terminal:
 | `yarn build-all`  | Build all production site to `./build/`            |
 | `yarn clean`      | Remove `./build/`                                  |
 
-> **Note** \
-> See [docs](https://github.com/HawAPI/docs) to check all docs scripts.
-
 ## Contributing
 
 You could help continuing its development by:
