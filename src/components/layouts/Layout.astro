@@ -18,8 +18,8 @@ const {
   description = 'A Free and Open Source API for Stranger Things.',
   tags = 'stranger things, stranger, things, stranger-things, st1, st2, st3, st4, api, github, git, hawapi, haw api, haw-api, HawAPI/HawAPI, theproject id, theproject.id, hawapi.theproject.id, netflix, watch, rest, free, open source',
   author = 'LucJosin',
-  banner = '/images/banner.png',
-  icon = '/favicon.ico',
+  banner = Astro.url + 'images/banner.png',
+  icon = Astro.url + 'favicon.ico',
 } = Astro.props as Props;
 ---
 
@@ -40,9 +40,8 @@ const {
     <meta name="robots" content="index,follow" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content={author} />
-    <meta name="twitter:site" content={Astro.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={'@' + author} />
     <meta name="twitter:domain" content={Astro.url} />
     <meta name="twitter:title" content={title + ' | ' + project} />
     <meta
@@ -59,7 +58,7 @@ const {
 
     <!-- Open Graph -->
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={title + ' | ' + project} />
     <meta property="og:site_name" content={project} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
