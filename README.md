@@ -8,7 +8,6 @@ This repository contains the source code required to build the [HawAPI](https://
 - [Dependencies](#dependencies)
 - [Setup](#usage)
 - [Scripts](#scripts)
-- [Preview](#preview)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -75,25 +74,6 @@ All scripts are run from the root of the project, from a terminal:
 | `yarn build-docs` | Build production site (docs) to `./docs/build/`    |
 | `yarn build-all`  | Build all production site to `./build/`            |
 | `yarn clean`      | Remove `./build/`                                  |
-
-> **Note** \
-> See [docs](https://github.com/HawAPI/docs) to check all docs scripts.
-
-## Preview
-
-<details>
-<summary>Home</summary>
-
-![Home](./assets/preview-home-min.png)
-
-</details>
-
-<details>
-<summary>Try it</summary>
-
-![Try it](./assets/preview-try-it-min.png)
-
-</details>
 
 ## Contributing
 
