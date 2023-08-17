@@ -1,0 +1,21 @@
+---
+import BackgroundEffect from '@components/core/BackgroundEffect.astro';
+import Layout from '@components/layouts/Layout.astro';
+---
+
+<Layout title="404">
+  <main>
+    <BackgroundEffect />
+    <h1 class="sw-effect-title">404</h1>
+    <p class="error-sub-title">This page could not be found.</p>
+    <a href="/" class="btn btn-full">Go Back</a>
+  </main>
+</Layout>
+
+<style>
+  .error-sub-title {
+    font-size: 1.1em;
+    margin: 0 0 1.2em 0;
+    text-align: center;
+  }
+</style>
