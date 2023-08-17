@@ -5,8 +5,7 @@ import Layout from '@components/layouts/Layout.astro';
 
 <script
   is:inline
-  src="https://cdn.statically.io/libs/typed.js/2.0.11/typed.min.js"
-></script>
+  src="https://cdn.statically.io/libs/typed.js/2.0.11/typed.min.js"></script>
 
 <Layout title="Home">
   <main>
@@ -27,8 +26,8 @@ import Layout from '@components/layouts/Layout.astro';
     </p>
 
     <div class="home-btns">
-      <a href="/docs/" class="hm-btn hm-btn-1">Docs</a>
-      <a href="/try-it/" class="hm-btn hm-btn-2">Try it</a>
+      <a href="/docs/" class="btn btn-full">Docs</a>
+      <a href="/try-it/" class="btn btn-border">Try it</a>
     </div>
   </main>
 </Layout>
@@ -49,34 +48,6 @@ import Layout from '@components/layouts/Layout.astro';
   .hm-title {
     font-family: Benguiat !important;
     white-space: normal;
-  }
-
-  .hm-btn {
-    display: flex;
-    height: 2.5rem;
-    width: 8rem;
-    border: none;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s;
-    border: 1px solid transparent;
-  }
-
-  .hm-btn {
-    background-color: rgb(179, 2, 2);
-    color: white;
-  }
-
-  .hm-btn-1:hover {
-    background-color: rgb(100, 2, 2);
-    color: white;
-  }
-
-  .hm-btn-2 {
-    border: 1px solid rgb(179, 2, 2);
-    background-color: transparent;
-    color: white;
   }
 </style>
 
