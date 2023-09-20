@@ -1,10 +1,11 @@
 ---
+import Footer from '@components/layouts/Footer.astro';
 import Header from '@components/layouts/Header.astro';
-import Footer from './Footer.astro';
 
 export interface Props {
   title: string;
   project?: string;
+  endTitle?: string;
   description?: string;
   tags?: string;
   author?: string;
@@ -15,11 +16,12 @@ export interface Props {
 const {
   title,
   project = 'HawAPI',
-  description = 'A Free and Open Source API for Stranger Things.',
+  endTitle = ' | HawAPI - A Free and Open Source API for Stranger Things.',
+  description = 'A Free and Open Source API for Stranger Things. This API provides various information about the Stranger Things show.',
   tags = 'stranger things, stranger, things, stranger-things, st1, st2, st3, st4, api, github, git, hawapi, haw api, haw-api, HawAPI/HawAPI, theproject id, theproject.id, hawapi.theproject.id, netflix, watch, rest, free, open source',
   author = 'LucJosin',
-  banner = Astro.url + 'images/banner.png',
-  icon = Astro.url + 'favicon.ico',
+  banner = Astro.site + 'images/banner.png',
+  icon = Astro.site + 'favicon.ico',
 } = Astro.props as Props;
 ---
 
@@ -42,8 +44,8 @@ const {
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={'@' + author} />
-    <meta name="twitter:domain" content={Astro.url} />
-    <meta name="twitter:title" content={title + ' | ' + project} />
+    <meta name="twitter:domain" content={Astro.site} />
+    <meta name="twitter:title" content={title + endTitle} />
     <meta
       name="twitter:description"
       property="og:description"
@@ -58,7 +60,7 @@ const {
 
     <!-- Open Graph -->
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title + ' | ' + project} />
+    <meta property="og:title" content={title + endTitle} />
     <meta property="og:site_name" content={project} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -76,7 +78,7 @@ const {
     <meta name="generator" content={Astro.generator} />
 
     <!-- Title -->
-    <title>{title + ' | ' + project}</title>
+    <title>{title + endTitle}</title>
   </head>
   <body>
     <Header />
