@@ -1,6 +1,6 @@
 # HawAPI - Website
 
-This repository contains the source code required to build the [HawAPI](https://hawapi.theproject.id) website and documentation.
+This repository contains the source code required to build the [HawAPI](https://hawapi.theproject.id) website.
 
 ## Topics
 
@@ -16,7 +16,6 @@ This repository contains the source code required to build the [HawAPI](https://
 - Text editor or IDE (VsCode, Subline, Noteped++)
 - Npm/Yarn
   - [Astro](https://astro.build/) for [website](https://github.com/HawAPI/website) generation
-  - [Retype](https://retype.com/) for [docs](https://github.com/HawAPI/website) generation
 
 ## Dependencies
 
@@ -58,22 +57,19 @@ yarn dev
 Open the browser and go to:
 
 ```
-http://localhost:3000
+http://localhost:4321
 ```
 
 ## Scripts
 
 All scripts are run from the root of the project, from a terminal:
 
-| Command           | Action                                             |
-| :---------------- | :------------------------------------------------- |
-| `yarn`            | Installs dependencies                              |
-| `yarn dev`        | Starts local dev server at `localhost:3000`        |
-| `yarn dev-docs`   | Starts local dev (docs) server at `localhost:5005` |
-| `yarn build`      | Build production site to `./build/`                |
-| `yarn build-docs` | Build production site (docs) to `./docs/build/`    |
-| `yarn build-all`  | Build all production site to `./build/`            |
-| `yarn clean`      | Remove `./build/`                                  |
+| Command      | Action                                      |
+| :----------- | :------------------------------------------ |
+| `yarn`       | Installs dependencies                       |
+| `yarn dev`   | Starts local dev server at `localhost:4321` |
+| `yarn build` | Build production site to `./build/`         |
+| `yarn clean` | Remove `./build/`                           |
 
 ## Contributing
 
