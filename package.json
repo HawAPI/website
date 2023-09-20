@@ -4,11 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "dev:docs": "cd docs/ && retype watch",
-    "build": "yarn clean && astro build",
-    "build:adapt": "./scripts/adapt-website.sh",
-    "build:docs": "cd docs/ && yarn build",
-    "build:all": "yarn build && yarn build:docs && ./scripts/setup-docs.sh && yarn build:adapt",
+    "build": "astro build",
     "clean": "rm -rf ./build"
   },
   "devDependencies": {
