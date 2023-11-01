@@ -1,5 +1,5 @@
 {
-  "name": "@hawapi/root",
+  "name": "@hawapi/website",
   "packageManager": "yarn@4.0.1",
   "version": "1.2.0",
   "private": true,
