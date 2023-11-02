@@ -1,6 +1,7 @@
 ---
-import BackgroundEffect from '@components/core/BackgroundEffect.astro';
 import Layout from '@components/layouts/Layout.astro';
+import Link from '@components/core/Link.astro';
+import Container from '@components/data/Container.astro';
 ---
 
 <script
@@ -8,8 +9,7 @@ import Layout from '@components/layouts/Layout.astro';
   src="https://cdn.statically.io/libs/typed.js/2.0.11/typed.min.js"></script>
 
 <Layout title="Home">
-  <main>
-    <BackgroundEffect />
+  <Container>
     <h1 class="sw-effect-title">
       <span class="hm-title" id="typ-title"></span>
     </h1>
@@ -19,17 +19,17 @@ import Layout from '@components/layouts/Layout.astro';
       <a href="https://github.com/HawAPI" target="_blank" class="oc">
         Open Source
       </a>
-      API for
-      <a href="https://www.netflix.com/br/title/80057281" target="_blank">
+       API for
+      <a href="https://www.netflix.com/title/80057281" target="_blank">
         Stranger Things
       </a>
     </p>
 
     <div class="home-btns">
-      <a href="/docs/" class="btn btn-full">Docs</a>
-      <a href="/try-it/" class="btn btn-border">Try it</a>
+      <Link title="Docs" href="/docs/" active />
+      <Link title="Try it" href="/try-it/" />
     </div>
-  </main>
+  </Container>
 </Layout>
 
 <style>
@@ -46,7 +46,10 @@ import Layout from '@components/layouts/Layout.astro';
   .home-btns {
     margin-top: 0.8rem;
     display: flex;
-    gap: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .hm-title {
@@ -56,15 +59,15 @@ import Layout from '@components/layouts/Layout.astro';
 </style>
 
 <script is:inline>
-  new Typed('#typ-title', {
-    strings: ['HawAPI', 'Hawkins', 'Stranger Things'],
-    typeSpeed: 150,
-    backSpeed: 100,
-    startDelay: 600,
-    backDelay: 1500,
-    stringsElement: null,
-    showCursor: true,
-    cursorChar: '|',
-    loop: true,
-  });
+new Typed('#typ-title', {
+  strings: ['HawAPI', 'Hawkins', 'Stranger Things'],
+  typeSpeed: 150,
+  backSpeed: 100,
+  startDelay: 600,
+  backDelay: 1500,
+  stringsElement: null,
+  showCursor: true,
+  cursorChar: '|',
+  loop: true,
+});
 </script>
