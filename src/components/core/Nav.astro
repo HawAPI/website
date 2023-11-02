@@ -1,35 +1,57 @@
 ---
+import Link from './Link.astro';
 ---
 
-<nav class="m-menu-nav">
-  <ul class="m-menu-ul">
-    <li class="nav-item"><a href="/docs/sdks/">SDK's</a></li>
-    <li class="nav-item"><a href="/docs/faq/">FAQ</a></li>
-    <li class="nav-item"><a href="/docs/about/">About</a></li>
+<nav class="mobile-menu-nav">
+  <ul class="mobile-menu-list">
+    <li class="menu-item">
+      <Link
+        href="/docs/sdks/"
+        name="SDK's"
+        title="See all HawAPI SDKs"
+        isLocal
+      />
+    </li>
+    <li class="menu-item">
+      <Link
+        href="/docs/faq/"
+        name="FAQ"
+        title="See the FAQ about the project"
+        isLocal
+      />
+    </li>
+    <li class="menu-item">
+      <Link
+        href="/docs/about/"
+        name="About"
+        title="See more about the project"
+        isLocal
+      />
+    </li>
   </ul>
 </nav>
 
 <style>
-  .m-menu-nav {
+  .mobile-menu-nav {
     height: 100%;
     width: 100%;
   }
 
-  .nav-item {
+  .menu-item {
     display: inline;
     margin-right: 1.5rem;
     font-size: 0.875rem;
   }
 
   @media (max-width: 992px) {
-    .m-menu-nav {
+    .mobile-menu-nav {
       height: 100%;
       width: 100%;
       position: fixed;
       margin-top: 2rem;
     }
 
-    .m-menu-ul {
+    .mobile-menu-list {
       margin: 0;
       padding: 0;
       display: flex;
@@ -38,7 +60,7 @@
       justify-content: center;
     }
 
-    .nav-item {
+    .menu-item {
       margin-right: 0;
       margin-top: 1.5rem;
     }
