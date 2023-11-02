@@ -1,0 +1,19 @@
+---
+interface Props {
+  value?: string;
+  margin?: string;
+}
+
+const { value, margin = '1rem' } = Astro.props;
+---
+
+<p class="description-container">
+  {value ?? <slot />}
+</p>
+
+<style define:vars={{ margin }}>
+  .description-container {
+    text-align: center;
+    margin: var(--margin);
+  }
+</style>
