@@ -1,5 +1,6 @@
 ---
 interface Props {
+  name: string;
   title: string;
   href: string;
   isLocal?: boolean;
@@ -7,7 +8,7 @@ interface Props {
   id?: string;
 }
 
-const { title, href, isLocal, active, id } = Astro.props as Props;
+const { name, title, href, isLocal, active, id } = Astro.props as Props;
 ---
 
 <a
@@ -16,8 +17,9 @@ const { title, href, isLocal, active, id } = Astro.props as Props;
   rel={isLocal ? undefined : 'noopener noreferrer'}
   target={isLocal ? undefined : '_blank'}
   id={id}
+  title={title}
 >
-  {title}
+  {name}
 </a>
 
 <style>
