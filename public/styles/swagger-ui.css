@@ -7162,7 +7162,7 @@ small,
 .swagger-ui .opblock-tag-section {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   padding: 1rem;
   border-radius: 5px;
 }
@@ -7947,7 +7947,7 @@ small,
 }
 .swagger-ui .btn.execute {
   background-color: var(--primary-border-color);
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   color: #fff;
 }
 .swagger-ui .btn-group {
@@ -8129,7 +8129,7 @@ small,
 .swagger-ui textarea {
   background: transparent;
   color: #fff;
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   margin: 5px 0;
   min-width: 100px;
@@ -8250,7 +8250,7 @@ small,
     50% no-repeat;
 }
 .swagger-ui .dialog-ux {
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   color: var(--secondary-text-color);
   border-radius: 5px;
   bottom: 0;
@@ -8270,7 +8270,7 @@ small,
 }
 .swagger-ui .dialog-ux .modal-ux {
   background-color: var(--primary-color);
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   color: var(--secondary-text-color);
   border-radius: 5px;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
@@ -8303,7 +8303,7 @@ small,
   margin: 15px 0 0;
 }
 .swagger-ui .dialog-ux .modal-ux-header {
-  border-bottom: 1px solid var(--secondary-border-color);
+  border-bottom: 1px solid var(--border-color);
   align-items: center;
   display: flex;
   padding: 12px 0;
@@ -8565,7 +8565,7 @@ small,
   width: 100%;
   background-color: transparent;
   color: #fff;
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--border-color);
   pointer-events: none;
 }
 .swagger-ui .servers h4.message {
