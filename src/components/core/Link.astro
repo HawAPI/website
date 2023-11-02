@@ -22,3 +22,9 @@ const { name, title, href, isLocal, id, classes } = Astro.props as Props;
 >
   {name ?? <slot />}
 </a>
+
+<style>
+  .link-item {
+    display: initial;
+  }
+</style>

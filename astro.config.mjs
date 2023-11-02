@@ -2,6 +2,11 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 import compress from 'astro-compress';
+import rename from 'astro-rename';
+
+import HashRenamer from './src/lib/hash-renamer';
+
+const renamer = new HashRenamer();
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +24,13 @@ export default defineConfig({
   // Astro sitemap.
   //
   // Ref: https://docs.astro.build/en/guides/integrations-guide/sitemap/
-  integrations: [sitemap(), compress()],
+  integrations: [
+    sitemap(),
+    rename({
+      rename: { except: ['title'], strategy: (key) => renamer.rename(key) },
+    }),
+    compress(),
+  ],
   // Listen on all addresses, including LAN and public addresses.
   //
   // Ref: https://docs.astro.build/en/reference/configuration-reference/#serverhost
