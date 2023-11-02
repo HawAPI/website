@@ -7,41 +7,15 @@ interface Props {
   id?: string;
 }
 
-const { title, href, isLocal, active, id } = Astro.props as Props;
+const { title, href, isLocal, id } = Astro.props as Props;
 ---
 
 <a
-  class:list={['link-item', active ? 'active' : undefined]}
+  class="link-item"
   href={href}
-  target={isLocal ? '_blank' : undefined}
+  rel={isLocal ? undefined : 'noopener noreferrer'}
+  target={isLocal ? undefined : '_blank'}
   id={id}
 >
   {title}
 </a>
-
-<style>
-  .link-item {
-    display: flex;
-    height: 2.5rem;
-    width: 8rem;
-    border-radius: var(--border-radius);
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s;
-    cursor: pointer;
-    border: 1px solid rgb(179, 2, 2);
-    color: white;
-  }
-
-  .link-item:hover {
-    background-color: var(--secondary-color);
-  }
-
-  .active {
-    background-color: var(--secondary-color);
-  }
-
-  .active:hover {
-    background-color: rgb(151, 0, 0);
-  }
-</style>
