@@ -1,0 +1,22 @@
+---
+interface Props {
+  marginTop?: string;
+}
+
+const { marginTop = '10rem' } = Astro.props;
+---
+
+<div class="container">
+  <slot />
+</div>
+
+<style define:vars={{ marginTop }}>
+  .container {
+    width: 100%;
+    margin-top: var(--marginTop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+</style>
