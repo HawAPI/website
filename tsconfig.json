@@ -18,7 +18,8 @@
     "paths": {
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"]
     }
   }
 }
