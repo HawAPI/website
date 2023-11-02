@@ -1,7 +1,10 @@
 ---
 import Layout from '@components/layouts/Layout.astro';
+import LinkBox from '@components/core/LinkBox.astro';
 import Link from '@components/core/Link.astro';
 import Container from '@components/data/Container.astro';
+import TextEffect from '@components/core/TextEffect.astro';
+import Description from '@components/core/Description.astro';
 ---
 
 <script
@@ -10,41 +13,35 @@ import Container from '@components/data/Container.astro';
 
 <Layout title="Home">
   <Container>
-    <h1 class="sw-effect-title">
+    <TextEffect>
       <span class="hm-title" id="typ-title"></span>
-    </h1>
+    </TextEffect>
 
-    <p class="home-sub-title">
+    <Description>
       A Free and
-      <a href="https://github.com/HawAPI" target="_blank" class="oc">
-        Open Source
-      </a>
+      <Link
+        title="Open Source"
+        href="https://github.com/HawAPI"
+        isLocal={false}
+      />
        API for
-      <a href="https://www.netflix.com/title/80057281" target="_blank">
-        Stranger Things
-      </a>
-    </p>
+      <Link
+        title="Stranger Things"
+        href="https://www.netflix.com/title/80057281"
+        isLocal={false}
+      />
+    </Description>
 
-    <div class="home-btns">
-      <Link title="Docs" href="/docs/" active />
-      <Link title="Try it" href="/try-it/" />
+    <div class="home-links">
+      <LinkBox title="Docs" href="/docs/" active isLocal />
+      <LinkBox title="Try it" href="/try-it/" isLocal />
     </div>
   </Container>
 </Layout>
 
 <style>
-  body {
-    overflow: hidden;
-  }
-
-  .home-sub-title {
-    font-size: 1.1em;
-    margin: 0 0 1.2em 0;
-    text-align: center;
-  }
-
-  .home-btns {
-    margin-top: 0.8rem;
+  .home-links {
+    margin: 0.8rem 1.5rem 0 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -59,15 +56,15 @@ import Container from '@components/data/Container.astro';
 </style>
 
 <script is:inline>
-new Typed('#typ-title', {
-  strings: ['HawAPI', 'Hawkins', 'Stranger Things'],
-  typeSpeed: 150,
-  backSpeed: 100,
-  startDelay: 600,
-  backDelay: 1500,
-  stringsElement: null,
-  showCursor: true,
-  cursorChar: '|',
-  loop: true,
-});
+  new Typed('#typ-title', {
+    strings: ['HawAPI', 'Hawkins', 'Stranger Things'],
+    typeSpeed: 150,
+    backSpeed: 100,
+    startDelay: 600,
+    backDelay: 1500,
+    stringsElement: null,
+    showCursor: true,
+    cursorChar: '|',
+    loop: true,
+  });
 </script>
