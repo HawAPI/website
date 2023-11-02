@@ -20,21 +20,35 @@ import Description from '@components/core/Description.astro';
     <Description>
       A Free and
       <Link
-        title="Open Source"
+        name="Open Source"
+        title="See the GitHub page of HawAPI"
         href="https://github.com/HawAPI"
         isLocal={false}
       />
-       API for
+       API for the
       <Link
-        title="Stranger Things"
+        name="Stranger Things"
+        title="See the official Stranger Things page on Netflix"
         href="https://www.netflix.com/title/80057281"
         isLocal={false}
       />
+       show
     </Description>
 
     <div class="home-links">
-      <LinkBox title="Docs" href="/docs/" active isLocal />
-      <LinkBox title="Try it" href="/try-it/" isLocal />
+      <LinkBox
+        name="Docs"
+        title="See the HawAPI documentation"
+        href="/docs/"
+        active
+        isLocal
+      />
+      <LinkBox
+        name="Try it"
+        title="Try it out the HawAPI project"
+        href="/try-it/"
+        isLocal
+      />
     </div>
   </Container>
 </Layout>

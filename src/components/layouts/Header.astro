@@ -1,30 +1,39 @@
 ---
+import Link from '@components/core/Link.astro';
 import Nav from '@components/core/Nav.astro';
 import { Icon } from 'astro-icon';
 ---
 
 <header>
-  <a href="/" class="header-item-box header-item-box-left">
-    <span class="title">Haw<br />API</span>
-  </a>
+  <Link href="/" title="Go to homepage" isLocal classes={['header-item']}>
+    <span class:list={['title', 'header-item-left']}>Haw<br />API</span>
+  </Link>
+
   <div class="menu">
-    <div class="n-menu">
+    <div class="large-menu">
       <Nav />
     </div>
-    <div class="m-menu">
-      <Icon name="ic:round-menu" class="m-menu-icon" />
-      <div class="m-menu-body">
+    <div class="mobile-menu">
+      <Icon name="ic:round-menu" class="mobile-menu-icon" />
+      <div class="mobile-menu-body">
         <Nav />
       </div>
     </div>
   </div>
-  <a
+
+  <Link
     href="https://github.com/HawAPI"
-    target="_blank"
-    class="header-item-box header-item-box-right"
+    title="See the GitHub page of HawAPI"
+    classes={['header-item']}
   >
-    <Icon pack="mdi" name="github" height="30px" width="30px" />
-  </a>
+    <Icon
+      pack="mdi"
+      name="github"
+      height="30px"
+      width="30px"
+      class="header-item-right"
+    />
+  </Link>
 </header>
 
 <style>
@@ -47,7 +56,7 @@ import { Icon } from 'astro-icon';
     font-family: Benguiat;
   }
 
-  .header-item-box {
+  .header-item {
     height: 30px;
     width: 5rem;
     display: flex;
@@ -55,14 +64,19 @@ import { Icon } from 'astro-icon';
     justify-content: center;
   }
 
-  .header-item-box-left {
-    font-size: 1.5rem;
+  .header-item-left {
+    font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.8);
     text-shadow: var(--sw-primary-text-effect);
+    transition: all 0.3s;
   }
 
-  .header-item-box-left:hover {
+  .header-item-left:hover {
     color: rgb(100, 2, 2);
+  }
+
+  .header-item-right {
+    margin: 0 0.5rem;
   }
 
   .menu {
@@ -73,36 +87,36 @@ import { Icon } from 'astro-icon';
     justify-content: center;
   }
 
-  .m-menu > * {
+  .mobile-menu > * {
     display: none;
     pointer-events: none;
   }
 
-  .m-menu {
+  .mobile-menu {
     display: flex !important;
     align-items: center;
     justify-content: center;
   }
 
-  .m-menu-icon {
+  .mobile-menu-icon {
     z-index: 99;
     height: 40px;
     width: 40px;
     color: var(--secondary-text-color);
   }
 
-  .m-menu-body {
+  .mobile-menu-body {
     position: absolute;
     width: 100%;
   }
 
   @media (max-width: 992px) {
-    .n-menu {
+    .large-menu {
       display: none;
       pointer-events: none;
     }
 
-    .m-menu > .m-menu-icon {
+    .mobile-menu > .mobile-menu-icon {
       display: initial;
       pointer-events: all;
     }
@@ -111,9 +125,9 @@ import { Icon } from 'astro-icon';
 
 <script>
   let isOpen = false;
-  const mMenu = document.querySelector<HTMLElement>('.m-menu');
-  const mMenuBody = document.querySelector<HTMLElement>('.m-menu-body');
-  const main = document.querySelector<HTMLElement>('main');
+  const mMenu = document.querySelector<HTMLElement>('.mobile-menu');
+  const mMenuBody = document.querySelector<HTMLElement>('.mobile-menu-body');
+  const main = document.querySelector<HTMLElement>('.container');
 
   mMenu?.addEventListener('click', () => {
     if (mMenuBody == null || main == null) return;
