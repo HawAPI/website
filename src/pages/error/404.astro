@@ -1,0 +1,19 @@
+---
+import Description from '@components/core/Description.astro';
+import LinkBox from '@components/core/LinkBox.astro';
+import TextEffect from '@components/core/TextEffect.astro';
+import Container from '@components/data/Container.astro';
+import Layout from '@components/layouts/Layout.astro';
+---
+
+<Layout title="404">
+  <Container>
+    <TextEffect value="404" />
+
+    <Description
+      value="Page not found. Maybe something was deleted or moved."
+    />
+
+    <LinkBox name="Go back" title="Go back to homepage" href="/" isLocal />
+  </Container>
+</Layout>

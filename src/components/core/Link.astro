@@ -1,0 +1,30 @@
+---
+interface Props {
+  name?: string;
+  title: string;
+  href: string;
+  isLocal?: boolean;
+  active?: boolean;
+  id?: string;
+  classes?: string[];
+}
+
+const { name, title, href, isLocal, id, classes } = Astro.props as Props;
+---
+
+<a
+  class:list={['link-item', classes]}
+  href={href}
+  rel={isLocal ? undefined : 'noopener noreferrer'}
+  target={isLocal ? undefined : '_blank'}
+  id={id}
+  title={title}
+>
+  {name ?? <slot />}
+</a>
+
+<style>
+  .link-item {
+    display: initial;
+  }
+</style>

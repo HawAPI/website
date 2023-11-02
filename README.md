@@ -5,7 +5,6 @@ This repository contains the source code required to build the [HawAPI](https://
 ## Topics
 
 - [Prerequisites](#prerequisites)
-- [Dependencies](#dependencies)
 - [Setup](#usage)
 - [Scripts](#scripts)
 - [Contributing](#contributing)
@@ -14,16 +13,8 @@ This repository contains the source code required to build the [HawAPI](https://
 ## Prerequisites
 
 - Text editor or IDE (VsCode, Subline, Noteped++)
-- Npm/Yarn
+- Yarn
   - [Astro](https://astro.build/) for [website](https://github.com/HawAPI/website) generation
-
-## Dependencies
-
-- [@astrojs/sitemap](https://www.npmjs.com/package/@astrojs/sitemap)
-- [astro](https://www.npmjs.com/package/astro)
-- [astro-compress](https://www.npmjs.com/package/astro-compress)
-- [eslint](https://www.npmjs.com/package/eslint)
-- [prettier](https://www.npmjs.com/package/prettier)
 
 ## Setup
 

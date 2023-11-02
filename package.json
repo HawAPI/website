@@ -1,6 +1,7 @@
 {
-  "name": "@hawapi/root",
-  "version": "1.2.0",
+  "name": "@hawapi/website",
+  "packageManager": "yarn@4.0.1",
+  "version": "1.3.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -8,17 +9,18 @@
     "clean": "rm -rf ./build"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
-    "astro": "^3.1.1",
-    "astro-compress": "^2.0.12",
+    "@astrojs/sitemap": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "astro": "^3.4.2",
+    "astro-compress": "^2.2.0",
     "astro-icon": "^0.8.1",
-    "eslint": "^8.49.0",
+    "astro-rename": "^1.1.1",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-astro": "^0.29.0",
+    "eslint-plugin-astro": "^0.29.1",
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-astro": "^0.12.1",
     "svgo": "2.8.0"
   }
 }

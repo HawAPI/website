@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  href: string;
+  isLocal?: boolean;
+  active?: boolean;
+  id?: string;
+}
+
+const { name, title, href, isLocal, active, id } = Astro.props as Props;
+---
+
+<a
+  class:list={['link-box', active ? 'active' : undefined]}
+  href={href}
+  rel={isLocal ? undefined : 'noopener noreferrer'}
+  target={isLocal ? undefined : '_blank'}
+  id={id}
+  title={title}
+>
+  {name}
+</a>
+
+<style>
+  .link-box {
+    display: flex;
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: var(--border-radius);
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    border: 1px solid rgb(179, 2, 2);
+    color: white;
+  }
+
+  .link-box:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .active {
+    background-color: var(--secondary-color);
+  }
+
+  .active:hover {
+    background-color: rgb(151, 0, 0);
+  }
+</style>

@@ -1,13 +1,9 @@
 ---
-import BackgroundEffect from '@components/core/BackgroundEffect.astro';
 import Layout from '@components/layouts/Layout.astro';
 ---
 
 <Layout title="Try it">
-  <main>
-    <BackgroundEffect />
-    <div id="swagger-ui"></div>
-  </main>
+  <div id="swagger-ui"></div>
 </Layout>
 
 <link rel="stylesheet" type="text/css" href="/styles/swagger-ui.css" />
@@ -38,18 +34,18 @@ import Layout from '@components/layouts/Layout.astro';
   src="https://unpkg.com/swagger-ui-dist@4.19.0/swagger-ui-standalone-preset.js"
 ></script>
 <script is:inline>
-  window.onload = function () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const ui = SwaggerUIBundle({
-      url: 'https://hawapi.theproject.id/v3/api-docs',
-      dom_id: '#swagger-ui',
-      deepLinking: true,
-      tagsSorter: 'alpha',
-      validatorUrl: '',
-      presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
-      layout: 'StandaloneLayout',
-      docExpansion: 'none',
-      displayRequestDuration: true,
-    });
-  };
+window.onload = function () {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const ui = SwaggerUIBundle({
+    url: 'https://hawapi.theproject.id/v3/api-docs',
+    dom_id: '#swagger-ui',
+    deepLinking: true,
+    tagsSorter: 'alpha',
+    validatorUrl: '',
+    presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+    layout: 'StandaloneLayout',
+    docExpansion: 'none',
+    displayRequestDuration: true,
+  });
+};
 </script>

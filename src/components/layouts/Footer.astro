@@ -1,44 +1,59 @@
 ---
+import Link from '@components/core/Link.astro';
 ---
 
 <footer>
-  <a href="/docs/about/#maintainers" class="fr-item">Maintainers</a>
-  <a href="/docs/about/#tech-stack" class="fr-item">Tech Stack</a>
-  <a href="/docs/about/#fair-use-policy" class="fr-item">Fair Use Policy</a>
-  <a href="/docs/about/#copyright" class="fr-item">Copyright</a>
-  <a href="/docs/about/#licenses" class="fr-item">Licenses</a>
+  <Link
+    href="/docs/about/#maintainers"
+    name="Maintainers"
+    title="See all maintainers of the HawAPI project"
+    isLocal
+  />
+  <Link
+    href="/docs/about/#tech-stack"
+    name="Tech Stack"
+    title="See the tools of the HawAPI project"
+    isLocal
+  />
+  <Link
+    href="/docs/about/#fair-use-policy"
+    name="Fair Use Policy"
+    title="See the fair use policy of the project"
+    isLocal
+  />
+  <Link
+    href="/docs/about/#copyright"
+    name="Copyright"
+    title="See the copyright status of the project"
+    isLocal
+  />
+  <Link
+    href="/docs/about/#licenses"
+    name="Licenses"
+    title="See the project licenses"
+    isLocal
+  />
 </footer>
 
 <style>
   footer {
-    position: sticky;
-    min-height: 3.5rem;
+    height: 3.5rem;
     width: 100%;
+    position: fixed;
     font-size: 0.875rem;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
     justify-content: center;
     text-align: center;
     bottom: 0;
     gap: 1.5rem;
+    margin: 0 1.5rem 1rem 1.5rem;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 488px) {
     footer {
-      height: max-content;
-      display: grid;
-      align-items: initial;
-      justify-items: center;
-      grid-template-columns: repeat(3, 8rem);
-      grid-template-rows: repeat(2, 0.5rem);
-      gap: 1rem;
-    }
-  }
-
-  @media (max-width: 400px) {
-    footer {
-      grid-template-columns: repeat(3, 5rem);
-      grid-template-rows: repeat(2, 0.5rem);
+      margin-bottom: 1.5rem;
     }
   }
 </style>

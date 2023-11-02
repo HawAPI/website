@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <span class="background-effect"></span>
@@ -7,13 +8,20 @@
   .background-effect {
     width: 0px;
     height: 0px;
-    border-left: 32rem solid transparent;
-    border-right: 32rem solid transparent;
-    border-top: 70rem solid red;
+    border-left: 26.6vw solid transparent;
+    border-right: 26.6vw solid transparent;
+    border-top: 60vh solid red;
     filter: blur(120px);
     top: 0;
     opacity: 0.15;
     position: absolute;
     pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .background-effect {
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+    }
   }
 </style>

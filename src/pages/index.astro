@@ -1,6 +1,10 @@
 ---
-import BackgroundEffect from '@components/core/BackgroundEffect.astro';
 import Layout from '@components/layouts/Layout.astro';
+import LinkBox from '@components/core/LinkBox.astro';
+import Link from '@components/core/Link.astro';
+import Container from '@components/data/Container.astro';
+import TextEffect from '@components/core/TextEffect.astro';
+import Description from '@components/core/Description.astro';
 ---
 
 <script
@@ -8,45 +12,55 @@ import Layout from '@components/layouts/Layout.astro';
   src="https://cdn.statically.io/libs/typed.js/2.0.11/typed.min.js"></script>
 
 <Layout title="Home">
-  <main>
-    <BackgroundEffect />
-    <h1 class="sw-effect-title">
+  <Container>
+    <TextEffect>
       <span class="hm-title" id="typ-title"></span>
-    </h1>
+    </TextEffect>
 
-    <p class="home-sub-title">
+    <Description>
       A Free and
-      <a href="https://github.com/HawAPI" target="_blank" class="oc">
-        Open Source
-      </a>
-      API for
-      <a href="https://www.netflix.com/br/title/80057281" target="_blank">
-        Stranger Things
-      </a>
-    </p>
+      <Link
+        name="Open Source"
+        title="See the GitHub page of HawAPI"
+        href="https://github.com/HawAPI"
+        isLocal={false}
+      />
+       API for the
+      <Link
+        name="Stranger Things"
+        title="See the official Stranger Things page on Netflix"
+        href="https://www.netflix.com/title/80057281"
+        isLocal={false}
+      />
+       show
+    </Description>
 
-    <div class="home-btns">
-      <a href="/docs/" class="btn btn-full">Docs</a>
-      <a href="/try-it/" class="btn btn-border">Try it</a>
+    <div class="home-links">
+      <LinkBox
+        name="Docs"
+        title="See the HawAPI documentation"
+        href="/docs/"
+        active
+        isLocal
+      />
+      <LinkBox
+        name="Try it"
+        title="Try it out the HawAPI project"
+        href="/try-it/"
+        isLocal
+      />
     </div>
-  </main>
+  </Container>
 </Layout>
 
 <style>
-  body {
-    overflow: hidden;
-  }
-
-  .home-sub-title {
-    font-size: 1.1em;
-    margin: 0 0 1.2em 0;
-    text-align: center;
-  }
-
-  .home-btns {
-    margin-top: 0.8rem;
+  .home-links {
+    margin: 0.8rem 1.5rem 0 1.5rem;
     display: flex;
-    gap: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .hm-title {
