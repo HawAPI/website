@@ -1,6 +1,8 @@
 ---
+import BackgroundEffect from '@components/core/BackgroundEffect.astro';
 import Footer from '@components/layouts/Footer.astro';
 import Header from '@components/layouts/Header.astro';
+import '@styles/global.css';
 
 export interface Props {
   title: string;
@@ -25,7 +27,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Configurations -->
@@ -81,120 +83,15 @@ const {
     <title>{title + endTitle}</title>
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
+    <BackgroundEffect />
+    <main>
+      <Header />
+      <slot />
+      <Footer />
+    </main>
     <style>
-      @font-face {
-        font-display: swap;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 500;
-        src: url(/fonts/Poppins-Medium-LatinExt.woff2) format('woff2');
-        unicode-range: U+0100-024f, U+0259, U+1e??, U+2020, U+20a0-20ab,
-          U+20ad-20cf, U+2113, U+2c60-2c7f, U+a720-a7ff;
-      }
-
-      @font-face {
-        font-display: swap;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 500;
-        src: url(/fonts/Poppins-Medium-Latin.woff2) format('woff2');
-        unicode-range: U+00??, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da,
-          U+02dc, U+2000-206f, U+2074, U+20ac, U+2122, U+2191, U+2193, U+2212,
-          U+2215, U+feff, U+fffd;
-      }
-
-      @font-face {
-        font-display: swap;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 600;
-        src: url(/fonts/Poppins-SemiBold-LatinExt.woff2) format('woff2');
-        unicode-range: U+0100-024f, U+0259, U+1e??, U+2020, U+20a0-20ab,
-          U+20ad-20cf, U+2113, U+2c60-2c7f, U+a720-a7ff;
-      }
-
-      @font-face {
-        font-display: swap;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 600;
-        src: url(/fonts/Poppins-SemiBold-Latin.woff2) format('woff2');
-        unicode-range: U+00??, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da,
-          U+02dc, U+2000-206f, U+2074, U+20ac, U+2122, U+2191, U+2193, U+2212,
-          U+2215, U+feff, U+fffd;
-      }
-
-      @font-face {
-        font-family: Benguiat;
-        font-weight: 600;
-        src: url(/fonts/Benguiat-Bold.ttf);
-      }
-
-      :root {
-        --primary-color: rgb(15, 15, 15);
-        --secondary-color: rgb(211, 0, 0);
-
-        --primary-border-color: rgb(70, 0, 0);
-        --secondary-border-color: rgb(179, 2, 2);
-
-        --primary-text-color: #fff;
-        --secondary-text-color: rgb(211, 0, 0);
-
-        --sw-primary-text-effect: -0.05rem -0.05rem 1px #ed2b12,
-          0.05rem -0.05rem 1px #ed2b12, -0.05rem 0.05rem 1px #ed2b12,
-          0.05rem 0.05rem 1px #ed2b12, 0 0 15px #630100, 0 0 20px #450100;
-        --sw-secondary-text-effect: rgba(0, 0, 0, 0.8);
-      }
-
-      :global(*) {
-        text-decoration: none;
-        font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-          'Noto Color Emoji';
-      }
-
-      :global(a, h1, h2, h3, h4) {
-        margin: 0;
-        padding: 0;
-      }
-
-      :global(html) {
-        margin: 0;
-        padding: 0;
-        font-family: system-ui, sans-serif;
-        color: var(--primary-text-color);
-        background-color: var(--primary-color);
-      }
-
-      :global(body) {
-        margin: 0;
-      }
-
-      :global(main) {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      :global(a) {
-        text-decoration: none;
-        color: var(--secondary-text-color);
-        transition: all 0.3s;
-      }
-
-      :global(a:hover) {
-        color: var(--primary-text-color);
-      }
-
       :global(.sw-effect-title) {
-        font-size: 8em;
+        font-size: 6vw;
         font-family: Benguiat;
         color: var(--sw-secondary-text-effect);
         text-shadow: var(--sw-primary-text-effect);
@@ -203,74 +100,9 @@ const {
         text-align: center;
       }
 
-      /* Scroll Bar */
-      :global(::-webkit-scrollbar) {
-        width: 6px;
-      }
-
-      :global(::-webkit-scrollbar-track) {
-        background: var(--primary-border-color);
-      }
-
-      :global(::-webkit-scrollbar-thumb) {
-        background-color: var(--secondary-color);
-      }
-
-      :global(.btn) {
-        display: flex;
-        height: 2.5rem;
-        width: 8rem;
-        border: none;
-        border-radius: 5px;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s;
-        border: 1px solid transparent;
-      }
-
-      :global(.btn-full) {
-        background-color: rgb(179, 2, 2);
-        color: white;
-      }
-
-      :global(.btn-full:hover) {
-        background-color: rgb(100, 2, 2);
-        color: white;
-      }
-
-      :global(.btn-border) {
-        border: 1px solid rgb(179, 2, 2);
-        background-color: transparent;
-        color: white;
-      }
-
-      @media (max-width: 1340px) {
-        :global(.sw-effect-title) {
-          font-size: 7em;
-        }
-      }
-
-      @media (max-width: 1200px) {
-        :global(.sw-effect-title) {
-          font-size: 6em;
-        }
-      }
-
-      @media (max-width: 992px) {
-        :global(.sw-effect-title) {
-          font-size: 5em;
-        }
-      }
-
       @media (max-width: 768px) {
         :global(.sw-effect-title) {
-          font-size: 4em;
-        }
-      }
-
-      @media (max-width: 576px) {
-        :global(.sw-effect-title) {
-          font-size: 3em;
+          font-size: 12vw;
         }
       }
     </style>
